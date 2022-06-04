@@ -5,6 +5,8 @@ import { store } from './store';
 import { BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseLine from '@mui/material/CssBaseline'
 import './index.css';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
@@ -14,12 +16,21 @@ import '@fontsource/roboto/700.css';
 const container = document.getElementById('root')!;
 const root = createRoot(container);
 
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark'
+  }
+});
+
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Router>
-        <App />
-      </Router>
+      <ThemeProvider theme={darkTheme}>
+        <CssBaseLine />
+        <Router>
+            <App />
+        </Router>
+      </ThemeProvider>
     </Provider>
   </React.StrictMode>
 );

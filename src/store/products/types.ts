@@ -12,12 +12,15 @@ export interface ProductState {
   products: Product[];
   perPage: number;
   page: number;
+  totalPages: number,
+  loading: boolean
 }
 
 export enum ProductActions {
   FETCH_PRODUCTS = 'FETCH',
-  NEXT_PAGE = 'NEXT',
-  PREVIOUSE_PAGE = 'PREVIOUSE'
+  SET_PAGE = 'SET_PAGE',
+  SET_TOTAL_PAGES = 'SET_TOTAL_PAGE',
+  SET_LOADING = 'SET_LOADING'
 }
 
-export type ProductAction = PayloadAction<Product[]> | AnyAction;
+export type ProductAction = PayloadAction<Product[]> | PayloadAction<number> | PayloadAction<boolean> | AnyAction;
