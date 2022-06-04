@@ -5,7 +5,7 @@ const initialState: ProductState = {
   perPage: 5,
   page: 0,
   totalPages: 1,
-  loading: false
+  loading: false,
 };
 
 export default function productsReducer(

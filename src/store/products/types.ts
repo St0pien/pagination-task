@@ -13,14 +13,14 @@ export interface ProductState {
   perPage: number;
   page: number;
   totalPages: number,
-  loading: boolean
+  loading: boolean,
 }
 
 export enum ProductActions {
   FETCH_PRODUCTS = 'FETCH',
   SET_PAGE = 'SET_PAGE',
   SET_TOTAL_PAGES = 'SET_TOTAL_PAGE',
-  SET_LOADING = 'SET_LOADING'
+  SET_LOADING = 'SET_LOADING',
 }
 
 export type ProductAction = PayloadAction<Product[]> | PayloadAction<number> | PayloadAction<boolean> | AnyAction;
